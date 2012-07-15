@@ -114,4 +114,15 @@
      <!-- Colon separated list of package names that should be granted Notification Listener access -->
      <string name="config_defaultListenerAccessPackages" translatable="false">com.android.launcher3</string>
 
+    <!-- Package name(s) containing location provider support. These packages will be auto-granted
+         several permissions by the system, and should be system packages. -->
+    <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
+        <!-- Google Play Services or microG -->
+        <item>com.google.android.gms</item>
+        <!-- Standalone UnifiedNlp (for gapps) -->
+        <item>org.microg.nlp</item>
+    </string-array>
+
 </resources>
