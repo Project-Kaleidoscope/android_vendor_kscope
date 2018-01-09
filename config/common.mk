@@ -25,6 +25,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
 
+# Tethering - allow without requiring a provisioning app
+# (for devices that check this)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    net.tethering.noprovisioning=true
+
 # Only logging privapp-permissions whitelist
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
