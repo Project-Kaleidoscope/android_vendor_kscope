@@ -1,2 +1,5 @@
-# Include QCOM macros
-include vendor/kscope/build/core/qcom_utils.mk
+# Include board/platform macros
+include vendor/kscope/build/core/utils.mk
+
+# Include vendor platform definitions
+include vendor/kscope/build/core/vendor/*.mk
