@@ -8,6 +8,9 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/kscope/overlay/common
 
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    vendor/kscope/overlay/common
+
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
