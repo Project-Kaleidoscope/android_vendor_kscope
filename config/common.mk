@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Only logging privapp-permissions whitelist
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
 # Set GMS client ID base
