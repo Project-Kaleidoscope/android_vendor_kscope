@@ -1,12 +1,4 @@
 bootstrap_go_package {
-    name: "soong-kscope",
-    pkgPath: "kscope/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-kscope-generator",
     pkgPath: "kscope/soong/generator",
     deps: [
