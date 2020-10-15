@@ -20,6 +20,9 @@ PRODUCT_PACKAGES += \
     KscopeSimpleDeviceConfigOverlay \
     KscopeSystemUIOverlay
 
+PRODUCT_PACKAGES += \
+    NavigationBarMode2ButtonOverlay
+
 # Required packages
 PRODUCT_PACKAGES += \
     Chromium \
