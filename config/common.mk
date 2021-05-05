@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
 
 # Sounds
 PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/kscope/audio/Material/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Pixel/,$(TARGET_COPY_OUT_PRODUCT)/media/audio)
 
 PRODUCT_PRODUCT_PROPERTIES += \
