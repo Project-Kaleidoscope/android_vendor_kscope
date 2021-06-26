@@ -21,7 +21,8 @@ PRODUCT_PACKAGES += \
     KscopeSystemUIOverlay
 
 PRODUCT_PACKAGES += \
-    NavigationBarMode2ButtonOverlay
+    NavigationBarMode2ButtonOverlay \
+    NavigationBarNoHintOverlay
 
 # Required packages
 PRODUCT_PACKAGES += \
