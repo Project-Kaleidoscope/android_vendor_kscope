@@ -37,13 +37,6 @@ PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
     ThemePicker
 
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.ntfs \
-    mount.ntfs
-
 # Sounds
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Kaleidoscope/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
