@@ -93,3 +93,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.kscope.branch=$(KSCOPE_BRANCH) \
     ro.kscope.version=$(KSCOPE_VERSION) \
     ro.kscope.build.version=$(KSCOPE_DISPLAY_VERSION)
+
+# Enable support of one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
