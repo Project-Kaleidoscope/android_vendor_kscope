@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
     ThemePicker
 
+# Charger
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/kscope/charger,$(TARGET_COPY_OUT_PRODUCT)/etc/res)
+
 # Sounds
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Kaleidoscope/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
