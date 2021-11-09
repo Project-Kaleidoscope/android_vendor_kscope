@@ -35,6 +35,7 @@ $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 SOONG_CONFIG_NAMESPACES += kscopeGlobalVars
 SOONG_CONFIG_kscopeGlobalVars += \
     additional_gralloc_10_usage_bits \
+    camera_needs_client_info_lib \
     target_init_vendor_lib \
     target_ld_shim_libs \
     target_process_sdk_version_override \
@@ -54,6 +55,7 @@ SOONG_CONFIG_kscopeQcomVars += \
 endif
 
 # Soong bool variables
+SOONG_CONFIG_kscopeGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_kscopeQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_kscopeQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_kscopeQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
