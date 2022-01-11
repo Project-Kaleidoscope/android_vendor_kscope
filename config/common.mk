@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Overlays
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/kscope/overlay/common
+
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
