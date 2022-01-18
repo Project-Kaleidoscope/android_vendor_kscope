@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/kscope/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/kscope/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/kscope/prebuilt/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
+    vendor/kscope/prebuilt/bin/50-kscope.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-kscope.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
@@ -85,5 +85,6 @@ KSCOPE_VERSION := Kaleidoscope-$(KSCOPE_BRANCH)-$(KSCOPE_DEVICE)-$(KSCOPE_DATE)-
 KSCOPE_DISPLAY_VERSION := Kaleidoscope-$(KSCOPE_BRANCH)-$(KSCOPE_BUILD_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.kscope.branch=$(KSCOPE_BRANCH) \
     ro.kscope.version=$(KSCOPE_VERSION) \
     ro.kscope.build.version=$(KSCOPE_DISPLAY_VERSION)
