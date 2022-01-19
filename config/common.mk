@@ -13,6 +13,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 
 # Required packages
 PRODUCT_PACKAGES += \
+    Chromium \
     LatinIME \
     Launcher3QuickStep \
     ThemePicker
