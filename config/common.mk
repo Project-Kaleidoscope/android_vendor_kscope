@@ -6,10 +6,12 @@
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/kscope/overlay/common
+    vendor/kscope/overlay/common \
+    vendor/kscope/overlay/RaiseNOW
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/kscope/overlay/common
+    vendor/kscope/overlay/common \
+    vendor/kscope/overlay/RaiseNOW
 
 # Required packages
 PRODUCT_PACKAGES += \

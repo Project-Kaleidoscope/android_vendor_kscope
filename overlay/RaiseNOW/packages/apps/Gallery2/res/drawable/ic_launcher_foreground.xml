@@ -1,0 +1,40 @@
+<!--
+/**
+ * Copyright (c) 2022, Project Kaleidoscope
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.22333333"
+      android:scaleY="0.22333333"
+      android:translateX="17.82"
+      android:translateY="17.82">
+    <path
+        android:pathData="M94,323.92C94.65,196.34 196.09,94.88 323.92,94v60c-3.91,3.87 -9.14,2.69 -13.71,3.11 -37.35,3.47 -70,17.49 -98.07,42.38 -21.81,19.32 -37.14,42.88 -46.58,70.29a156.46,156.46 0,0 0,-8.41 40.93c-0.29,4.43 0.57,9.45 -3.14,13.2Z"
+        android:fillColor="#88b8e4"/>
+    <path
+        android:pathData="M154,323.92c0.81,-95.06 76,-169 169.91,-169.91v60c-3.22,3.55 -7.78,2.6 -11.72,3.1 -37.46,4.73 -65,24 -83.29,56.67 -7.66,13.71 -11.07,28.83 -12.56,44.39 -0.21,2.21 -0.44,4.32 -2.37,5.78Z"
+        android:fillColor="#a6caea"/>
+    <path
+        android:pathData="M214,323.92C214,263.44 263.44,214 323.92,214c0,35.48 -0.05,71 0.08,106.44 0,3 -0.6,3.59 -3.58,3.58C284.94,323.87 249.46,323.92 214,323.92Z"
+        android:fillColor="#bcd7ef"/>
+    <path
+        android:pathData="M87.75,50.09A37.79,37.79 0,0 1,125 87.88C124.84,108.06 107.8,125 87.58,125c-20.39,0 -37.67,-17.26 -37.5,-37.55C50.25,66.86 67.35,49.9 87.75,50.09Z"
+        android:fillColor="#ebd232"/>
+  </group>
+</vector>
