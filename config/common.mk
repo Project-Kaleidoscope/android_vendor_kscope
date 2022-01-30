@@ -15,7 +15,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Chromium \
     Gboard \
-    Launcher3QuickStep \
     ThemePicker
 
 # Filesystems tools
