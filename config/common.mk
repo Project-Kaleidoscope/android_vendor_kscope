@@ -83,6 +83,16 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
 
+# Boot animation
+ifneq ($(filter 360 480 720 1080 1440,$(TARGET_BOOT_ANIMATION_RES)),)
+PRODUCT_COPY_FILES += \
+    vendor/kscope/bootanimation/$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+else
+$(warning TARGET_BOOT_ANIMATION_RES is incorrect or undefined. Use generic bootanimation.)
+PRODUCT_COPY_FILES += \
+    vendor/kscope/bootanimation/720.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+endif
+
 # Version
 KSCOPE_BRANCH := sunflower
 KSCOPE_BUILD_TYPE := UNOFFICIAL
