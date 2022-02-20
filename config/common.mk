@@ -103,7 +103,7 @@ ifeq ($(IS_OFFICIAL), true)
     KSCOPE_BUILD_TYPE := OFFICIAL
 endif
 
--include vendor/gms/common/common-vendor.mk
+-include vendor/gms/gms.mk
 -include vendor/kscope-priv/keys/keys.mk
 
 KSCOPE_VERSION := Kaleidoscope-$(KSCOPE_BRANCH)-$(KSCOPE_DEVICE)-$(KSCOPE_DATE)-$(KSCOPE_BUILD_TYPE)
