@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     Chromium \
     ExactCalculator \
     Gboard \
+    KscopeSetupWizard \
     SimpleDeviceConfig \
     ThemePicker
 
