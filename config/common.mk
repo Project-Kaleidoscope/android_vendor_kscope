@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
     KscopeSystemUIOverlay
 
 PRODUCT_PACKAGES += \
+    Launcher3NoHintOverlay \
     NavigationBarMode2ButtonOverlay \
     NavigationBarNoHintOverlay
 
