@@ -72,4 +72,15 @@
     only. The component must be part of a system app. -->
     <string name="config_defaultSupervisionProfileOwnerComponent" translatable="false">com.google.android.gms/.kids.account.receiver.ProfileOwnerReceiver</string>
 
+    <!-- The set of system packages on device that are queryable by any app regardless of the
+         contents of its manifest. -->
+    <string-array name="config_forceQueryablePackages" translatable="false">
+        <!-- AOSP apps -->
+        <item>com.android.settings</item>
+        <item>com.android.providers.settings</item>
+        <!-- Google apps -->
+        <item>com.google.android.gms</item>
+        <item>com.android.vending</item>
+    </string-array>
+
 </resources>
