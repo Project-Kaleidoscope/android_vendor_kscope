@@ -14,7 +14,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <webviewproviders>
 
     <webviewprovider description="Google WebView" packageName="com.google.android.webview" availableByDefault="true">
