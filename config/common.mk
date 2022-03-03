@@ -42,6 +42,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Pixel/,$(TARGET_COPY_OUT_PRODUCT)/media/audio)
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.alarm_alert=Gentle_breeze.ogg \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.ringtone=Zen_too.ogg
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/kscope/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
