@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
+# Sounds
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/kscope/audio/Pixel/,$(TARGET_COPY_OUT_PRODUCT)/media/audio)
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/kscope/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
