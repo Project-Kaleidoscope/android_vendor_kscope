@@ -5,7 +5,7 @@
 #
 
 # Environment variables for official builds.
-if [ "${IS_OFFICIAL}" == "true" ]; then
+if [ "${IS_OFFICIAL}" = "true" ]; then
     # Override host metadata.
     export BUILD_USERNAME=buildbot
     export BUILD_HOSTNAME=kscope-build
