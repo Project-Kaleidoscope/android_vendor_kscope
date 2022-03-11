@@ -43,13 +43,14 @@ PRODUCT_PACKAGES += \
 
 # Sounds
 PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/kscope/audio/Kaleidoscope/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Material/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Pixel/,$(TARGET_COPY_OUT_PRODUCT)/media/audio)
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.alarm_alert=Gentle_breeze.ogg \
-    ro.config.notification_sound=Popcorn.ogg \
-    ro.config.ringtone=Zen_too.ogg
+    ro.config.alarm_alert=material_gentle.ogg \
+    ro.config.notification_sound=material_simple_1.ogg \
+    ro.config.ringtone=Kaleidoscope_Tune.ogg
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
