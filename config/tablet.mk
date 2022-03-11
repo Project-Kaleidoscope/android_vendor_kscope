@@ -6,3 +6,7 @@
 
 # Inherit common Kaleidoscope stuff
 $(call inherit-product, vendor/kscope/config/common.mk)
+
+# 2-pane layout
+PRODUCT_PACKAGES += \
+    androidx.window.extensions
