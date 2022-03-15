@@ -52,24 +52,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=material_simple_1.ogg \
     ro.config.ringtone=Kaleidoscope_Tune.ogg
 
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/kscope/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/kscope/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/kscope/prebuilt/bin/50-kscope.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-kscope.sh
-
-ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
-PRODUCT_COPY_FILES += \
-    vendor/kscope/prebuilt/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/kscope/prebuilt/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/kscope/prebuilt/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.ota.allow_downgrade=true
-endif
-endif
-
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
