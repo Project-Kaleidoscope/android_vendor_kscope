@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     vendor/kscope/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Version
-KSCOPE_BRANCH := sunflower
+KSCOPE_BRANCH := sunflowerleaf
 KSCOPE_BUILD_TYPE := UNOFFICIAL
 KSCOPE_DATE := $(shell date -u +%Y%m%d)
 KSCOPE_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d '_' -f 2,3)
