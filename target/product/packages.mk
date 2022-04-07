@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     Gboard \
     KscopeSetupWizard \
     KscopeThemesStub \
+    Raindrop \
     SimpleDeviceConfig \
     ThemePicker
 
