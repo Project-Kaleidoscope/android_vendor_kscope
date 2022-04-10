@@ -102,10 +102,6 @@ PRODUCT_COPY_FILES += \
     vendor/kscope/bootanimation/720.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 endif
 
-# Enable Android Beam on all targets
-PRODUCT_COPY_FILES += \
-    vendor/kscope/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
-
 # Version
 KSCOPE_BRANCH := sunflowerleaf
 KSCOPE_BUILD_TYPE := UNOFFICIAL
