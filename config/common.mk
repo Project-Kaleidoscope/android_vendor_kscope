@@ -18,7 +18,8 @@ PRODUCT_PACKAGES += \
     KscopeSettingsOverlay \
     KscopeSettingsProviderOverlay \
     KscopeSimpleDeviceConfigOverlay \
-    KscopeSystemUIOverlay
+    KscopeSystemUIOverlay \
+    KscopeThemePickerOverlay
 
 PRODUCT_PACKAGES += \
     Launcher3NoHintOverlay \
