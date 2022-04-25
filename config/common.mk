@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Gboard \
     KscopeSetupWizard \
+    KscopeThemesStub \
     SimpleDeviceConfig \
     ThemePicker
 
