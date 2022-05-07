@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     KscopeThemePickerOverlay
 
 PRODUCT_PACKAGES += \
+    KeyboardNoNavigationBarOverlay \
     Launcher3NoHintOverlay \
     NavigationBarMode2ButtonOverlay \
     NavigationBarNoHintOverlay
