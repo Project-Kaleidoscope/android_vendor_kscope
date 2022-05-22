@@ -21,5 +21,6 @@
         <item>com.android.networkstack.tethering</item>
         <item>com.android.phone</item>
         <item>com.android.systemui</item>
+        <item>com.qualcomm.qti.cne</item>
     </string-array>
 </resources>
