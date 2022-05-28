@@ -72,6 +72,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
+# Unspecialized app process
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
+
 # ADB authentication
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
