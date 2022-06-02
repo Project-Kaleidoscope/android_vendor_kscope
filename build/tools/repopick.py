@@ -29,6 +29,7 @@ import subprocess
 import re
 import argparse
 import textwrap
+import urllib.parse
 from functools import cmp_to_key
 from xml.etree import ElementTree
 
@@ -120,6 +121,8 @@ def fetch_query_via_http(remote_url, query):
                 parts = line.rstrip().split("|")
                 if parts[0] in remote_url:
                     auth = requests.auth.HTTPBasicAuth(username=parts[1], password=parts[2])
+        if 'is_kscope' in globals():
+            auth = requests.auth.HTTPBasicAuth(username=kscope_username, password=kscope_password)
         status_code = '-1'
         if auth:
             url = '{0}/a/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS&o=ALL_COMMITS'.format(remote_url, query)
@@ -150,6 +153,19 @@ def fetch_query(remote_url, query):
         return fetch_query_via_http(remote_url, query.replace(' ', '+'))
     else:
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
+
+
+def insert_http_credential(url):
+    url = url.split('//')
+    try:
+        global is_kscope, kscope_username, kscope_password
+        is_kscope = 114514
+        kscope_username = subprocess.check_output(['git', 'config', 'kscope.username']).decode().strip()
+        kscope_password = subprocess.check_output(['git', 'config', 'kscope.httptoken']).decode().strip()
+    except:
+        print('Fatal: You must set kscope.{username, httptoken} in your Git configuration.')
+        sys.exit(1)
+    return url[0] + '//' + urllib.parse.quote(kscope_username, safe='') + ':' + urllib.parse.quote(kscope_password, safe='') + '@' + url[1]
 
 
 if __name__ == '__main__':
@@ -197,6 +213,8 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--check-picked', type=int, default=10,
                         metavar='', help='pass the amount of commits to check for already picked changes')
     args = parser.parse_args()
+    if args.gerrit == default_gerrit:
+        args.gerrit = insert_http_credential(default_gerrit)
     if not args.start_branch and args.abandon_first:
         parser.error('if --abandon-first is set, you must also give the branch name with --start-branch')
     if args.auto_branch:
@@ -430,6 +448,11 @@ if __name__ == '__main__':
             method = 'anonymous http'
         else:
             method = 'ssh'
+
+        if 'is_kscope' in globals():
+            method = 'http'
+            split_url = item['fetch'][method]['url'].split('@')
+            item['fetch'][method]['url'] = split_url[0] + ':' + urllib.parse.quote(kscope_password, safe='') + '@' + split_url[1]
 
         # Try fetching from our org first if using default gerrit
         if args.gerrit == default_gerrit:
