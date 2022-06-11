@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2022 Project Kaleidoscope
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 PATH_OVERRIDE_SOONG := $(shell echo $(TOOLS_PATH_OVERRIDE))
 
 # Add variables that we wish to make available to soong here.

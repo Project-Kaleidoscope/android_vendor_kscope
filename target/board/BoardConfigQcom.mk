@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2022 Project Kaleidoscope
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Platform names
 KONA := kona #SM8250
 LITO := lito #SM7250

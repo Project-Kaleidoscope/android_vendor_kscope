@@ -5,7 +5,7 @@
 #
 
 # Inherit common Kaleidoscope stuff
-$(call inherit-product, vendor/kscope/config/common.mk)
+$(call inherit-product, vendor/kscope/target/product/common.mk)
 
 # 2-pane layout
 PRODUCT_PACKAGES += \

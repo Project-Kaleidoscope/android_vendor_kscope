@@ -5,7 +5,7 @@
 #
 
 # Inherit from common tablet config.
-$(call inherit-product, vendor/kscope/config/tablet_no_telephony.mk)
+$(call inherit-product, vendor/kscope/target/product/tablet_no_telephony.mk)
 
 # Data roaming
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -13,7 +13,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/kscope/prebuilt/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
+    vendor/kscope/target/config/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
 
 # Telephony packages
 PRODUCT_PACKAGES += \
