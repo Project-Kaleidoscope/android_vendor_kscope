@@ -5,7 +5,7 @@
 #
 
 # Inherit common Kaleidoscope stuff
-$(call inherit-product, vendor/kscope/target/product/common.mk)
+$(call inherit-product, vendor/kscope/target/product/common_no_telephony.mk)
 
 # Data roaming
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

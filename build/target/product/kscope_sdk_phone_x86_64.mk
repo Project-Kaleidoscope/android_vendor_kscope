@@ -8,7 +8,7 @@
 $(call inherit-product, build/target/product/sdk_phone_x86_64.mk)
 
 # Inherit some common Kaleidoscope stuff.
-$(call inherit-product, vendor/kscope/target/product/common.mk)
+$(call inherit-product, vendor/kscope/target/product/common_no_telephony.mk)
 
 # Enable mainline checking.
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
