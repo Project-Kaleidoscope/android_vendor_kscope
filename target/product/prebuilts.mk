@@ -18,6 +18,9 @@ endif
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/kscope/charger,$(TARGET_COPY_OUT_PRODUCT)/etc/res)
 
+# OPlus Sans
+$(call inherit-product-if-exists, external/oplus-fonts/fonts.mk)
+
 # Sounds
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/kscope/audio/Kaleidoscope/,$(TARGET_COPY_OUT_PRODUCT)/media/audio) \
