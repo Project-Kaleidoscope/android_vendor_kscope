@@ -14,6 +14,12 @@ PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
     ThemePicker
 
+# Camera
+ifneq ($(TARGET_USE_AOSP_CAMERA),true)
+PRODUCT_PACKAGES += \
+    Camera
+endif
+
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
