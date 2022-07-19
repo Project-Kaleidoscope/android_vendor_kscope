@@ -42,11 +42,11 @@ except ImportError:
 
 DEBUG = False
 
-custom_local_manifest = ".repo/local_manifests/pixel.xml"
-custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'twelve')
-custom_dependencies = "aosp.dependencies"
-org_manifest = "pixel-devices"  # leave empty if org is provided in manifest
-org_display = "PixelExperience-Devices"  # needed for displaying
+custom_local_manifest = ".repo/local_manifests/roomservice.xml"
+custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'sunflowerleaf')
+custom_dependencies = "kscope.dependencies"
+org_manifest = "kscope-devices"  # leave empty if org is provided in manifest
+org_display = "Kscope-Devices"  # needed for displaying
 
 github_auth = None
 
@@ -94,12 +94,14 @@ def indent(elem, level=0):
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
 
+
 def load_manifest(manifest):
     try:
         man = ElementTree.parse(manifest).getroot()
     except (IOError, ElementTree.ParseError):
         man = ElementTree.Element("manifest")
     return man
+
 
 def get_from_manifest(device_name):
     if os.path.exists(custom_local_manifest):
@@ -173,6 +175,7 @@ def add_to_manifest(repos, fallback_branch=None):
     f = open(custom_local_manifest, 'w')
     f.write(raw_xml)
     f.close()
+
 
 _fetch_dep_cache = []
 
@@ -265,7 +268,7 @@ def main():
         sys.exit()
 
     print("Device {0} not found. Attempting to retrieve device repository from "
-          "{1} Github (http://github.com/{1}).".format(device, org_display))
+          "{1} GitHub (http://github.com/{1}).".format(device, org_display))
 
     githubreq = urllib.request.Request(
         "https://api.github.com/search/repositories?"
@@ -288,13 +291,13 @@ def main():
     for repository in repositories:
         repo_name = repository['name']
 
-        if not (repo_name.startswith("device_") and
+        if not (repo_name.startswith("android_device_") and
                 repo_name.endswith("_" + device)):
             continue
         print("Found repository: %s" % repository['name'])
 
         fallback_branch = detect_revision(repository)
-        manufacturer = repo_name[7:-(len(device)+1)]
+        manufacturer = repo_name[15:-(len(device)+1)]
         repo_path = "device/%s/%s" % (manufacturer, device)
         adding = [{'repository': repo_name, 'target_path': repo_path}]
 
@@ -308,10 +311,11 @@ def main():
         print("Done")
         sys.exit()
 
-    print("Repository for %s not found in the %s Github repository list."
+    print("Repository for %s not found in the %s GitHub repository list."
           % (device, org_display))
     print("If this is in error, you may need to manually add it to your "
           "%s" % custom_local_manifest)
+
 
 if __name__ == "__main__":
     main()
