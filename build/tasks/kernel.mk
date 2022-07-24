@@ -66,6 +66,9 @@
 #                                          modules in system instead of vendor
 #   NEED_KERNEL_MODULE_VENDOR_OVERLAY  = Optional, if true, install kernel
 #                                          modules in vendor_overlay instead of vendor
+#
+#   TARGET_FORCE_PREBUILT_KERNEL       = Optional, use TARGET_PREBUILT_KERNEL even if
+#                                          kernel sources are present
 
 ifneq ($(TARGET_PROVIDES_KERNEL_MAKEFILE),true)
 ifneq ($(TARGET_NO_KERNEL),true)
@@ -161,12 +164,14 @@ else
     else
         ifneq ($(TARGET_FORCE_PREBUILT_KERNEL),)
             $(warning **********************************************************)
-            $(warning * Kernel source found and configuration was defined      *)
-            $(warning * but prebuilt kernel is being enforced.                 *)
-            $(warning * While there may be a good reason for this,             *)
-            $(warning * THIS IS NOT ADVISED.                                   *)
-            $(warning * Please configure your device to build the kernel       *)
-            $(warning * from source by unsetting TARGET_FORCE_PREBUILT_KERNEL  *)
+            $(warning * Kernel source found and configuration was defined,     *)
+            $(warning * but prebuilt kernel is being forced.                   *)
+            $(warning * While this is likely intentional,                      *)
+            $(warning * it is NOT SUPPORTED WHATSOEVER.                        *)
+            $(warning * Generated kernel headers may not align with            *)
+            $(warning * the ABI of kernel you're including.                    *)
+            $(warning * Please unset TARGET_FORCE_PREBUILT_KERNEL              *)
+            $(warning * to build the kernel from source.                       *)
             $(warning **********************************************************)
             FULL_KERNEL_BUILD := false
             KERNEL_BIN := $(TARGET_PREBUILT_KERNEL)
