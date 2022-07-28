@@ -21,6 +21,7 @@ import base64
 import json
 import netrc
 import os
+import subprocess
 import sys
 
 from xml.etree import ElementTree
@@ -48,7 +49,11 @@ custom_dependencies = "kscope.dependencies"
 org_manifest = "kscope-devices"  # leave empty if org is provided in manifest
 org_display = "Kscope-Devices"  # needed for displaying
 
-github_auth = None
+try:
+    github_token = subprocess.check_output(['git', 'config', 'kscope.ghtoken']).decode().strip()
+    github_auth = base64.b64encode(bytes("Authorization:" + github_token, "utf-8")).decode().strip()
+except:
+    github_auth = None
 
 
 local_manifests = '.repo/local_manifests'
@@ -121,7 +126,7 @@ def is_in_manifest(project_path):
     return False
 
 
-def add_to_manifest(repos, fallback_branch=None):
+def add_to_manifest(repos, fallback_branch=None, is_priv=False):
     lm = load_manifest(custom_local_manifest)
 
     for repo in repos:
@@ -136,7 +141,10 @@ def add_to_manifest(repos, fallback_branch=None):
         elif "/" not in repo_name:
             repo_remote=org_manifest
         elif "/" in repo_name:
-            repo_remote="github"
+            if is_priv:
+                repo_remote="github-priv"
+            else:
+                repo_remote="github"
 
         if is_in_manifest(repo_path):
             print('already exists: %s' % repo_path)
@@ -301,7 +309,11 @@ def main():
         repo_path = "device/%s/%s" % (manufacturer, device)
         adding = [{'repository': repo_name, 'target_path': repo_path}]
 
-        add_to_manifest(adding, fallback_branch)
+        if (str(repository['private']) == "True"):
+            adding = [{'repository': org_display + "/" + repo_name, 'target_path': repo_path}]
+            add_to_manifest(adding, fallback_branch, True)
+        else:
+            add_to_manifest(adding, fallback_branch)
 
         print("Syncing repository to retrieve project.")
         os.system('repo sync --force-sync --no-tags --current-branch --no-clone-bundle %s' % repo_path)
