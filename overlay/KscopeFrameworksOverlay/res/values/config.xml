@@ -126,4 +126,14 @@
         <item>org.microg.nlp</item>
     </string-array>
 
+    <!-- The name of the package that will hold the wellbeing role. -->
+    <string name="config_systemWellbeing" translatable="false">com.google.android.apps.wellbeing</string>
+
+    <!-- The package name for the default wellbeing app.
+         This package must be trusted, as it has the permissions to control other applications
+         on the device.
+         Example: "com.android.wellbeing"
+     -->
+    <string name="config_defaultWellbeingPackage" translatable="false">com.google.android.apps.wellbeing</string>
+
 </resources>
