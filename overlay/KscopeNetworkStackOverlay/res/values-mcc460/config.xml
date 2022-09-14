@@ -21,9 +21,9 @@
     <string name="config_captive_portal_https_url" translatable="false">https://conn1.oppomobile.com/generate_204</string>
 
     <string-array name="config_captive_portal_fallback_urls" translatable="false">
+        <item>http://www.qualcomm.cn/generate_204</item>
         <item>http://connectivitycheck.gstatic.com/generate_204</item>
-        <item>http://www.google.com/generate_204</item>
-        <item>http://www.google.com/gen_204</item>
+        <item>http://www.googleapis.cn/generate_204</item>
         <item>http://play.googleapis.com/generate_204</item>
     </string-array>
 
