@@ -11,7 +11,7 @@ PRODUCT_PACKAGES += \
     Gboard \
     KscopeSetupWizard \
     KscopeThemesStub \
-    ParallelSpacePrebuilt \
+    ParallelSpace \
     Raindrop \
     SimpleDeviceConfig \
     ThemePicker
